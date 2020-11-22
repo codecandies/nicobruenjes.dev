@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
   </head>
   <body>
-  {% include "../partials/header.njk"  ignore missing %}
-  {% include "../partials/nav.njk" ignore missing %}
+  {% include "../partials/header.njk"  ignore missing -%}
+  {%- include "../partials/nav.njk" ignore missing -%}
 
-  {% block content %}
+  {%- block content %}
   {{ content | safe }}
-  {% endblock %}
+  {%- endblock -%}
 
-  {% include "../partials/footer.njk"  ignore missing %}
+  {%- include "../partials/footer.njk"  ignore missing %}
   </body>
 </html>

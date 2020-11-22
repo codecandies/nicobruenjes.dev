@@ -3,15 +3,19 @@
   "version": "0.0.1",
   "description": "first throw on eleventy",
   "scripts": {
-    "build": "eleventy",
-    "watch": "eleventy --watch",
-    "serve": "eleventy --serve",
-    "start": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
+    "clean": "rm -rf _site",
+    "eleventy:default": "eleventy",
+    "eleventy:watch": "eleventy --watch",
+    "css:prod": "sass src/css/:_site/css/ --load-path=node_modules --no-source-map && postcss ./_site/css/*.css --replace",
+    "css:dev": "sass src/css/:_site/css/  --load-path=node_modules --embed-sources && postcss ./_site/css/*.css --replace",
+    "serve": "light-server -c .lightserverrc",
+    "dev": "npm-run-all clean css:dev eleventy:default --parallel eleventy:watch serve --print-label",
+    "dev:debug": "DEBUG=* npm run dev",
+    "build": "run-s clean css:prod eleventy:default --print-label"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codecandies/nicobruenjes.dev.git"
+    "url": "git+https://github.com/codecandies/nicobruenjes.dev.git"
   },
   "author": {
     "name": "Nico Brünjes",
@@ -20,6 +24,22 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1"
+    "css-loader": "^5.0.1",
+    "light-server": "^2.9.1",
+    "postcss-loader": "^4.1.0",
+    "sass": "^1.29.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "autoprefixer": "^10.0.2",
+    "markdown-it": "^12.0.2",
+    "markdown-it-anchor": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.9",
+    "postcss-cli": "^8.3.0",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0"
   }
 }

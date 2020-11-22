@@ -1,0 +1,25 @@
+{
+  "name": "nicobruenjes-dev",
+  "version": "0.0.1",
+  "description": "first throw on eleventy",
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codecandies/nicobruenjes.dev.git"
+  },
+  "author": {
+    "name": "Nico Brünjes",
+    "email": "me@nicobruenjes.dev",
+    "url": "https://nicobruenjes.dev/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
+}

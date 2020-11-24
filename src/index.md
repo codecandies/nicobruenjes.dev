@@ -1,6 +1,6 @@
 ---
 title: nicobruenjes.dev
-layout: layouts/home.njk
+layout: home.njk
 ---
 
 # nicobruenjes.dev

@@ -4,7 +4,9 @@ const markdownItContainer = require('markdown-it-container');
 const markdownItAttrs = require('markdown-it-attrs');
 
 module.exports = function( eleventyConfig ) {
-  eleventyConfig.addLayoutAlias( "artikel", "layouts/posts.njk" );
+
+  eleventyConfig.addPassthroughCopy('src/css/fonts/')
+  eleventyConfig.setDataDeepMerge(true);
 
   let markdownItOptions = {
     html: true,
@@ -27,6 +29,7 @@ module.exports = function( eleventyConfig ) {
     dir: {
       input: 'src',
       output: '_site',
+      data: "_data",
       includes: '_includes',
       layouts: '_includes/layouts'
     },

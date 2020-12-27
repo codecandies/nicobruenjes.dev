@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="{{ language or metadata.language  }}">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,17 +10,16 @@
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-    <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="{{ '/css/dark.css' | url }}">
   </head>
-  <body>
-    <div class="page">
-      {% include "../_partials/header.njk"  ignore missing -%}
-      <main class="page-main">
-        {%- block content %}
-        {{ content | safe }}
-        {%- endblock -%}
-      </main>
-      {%- include "../_partials/footer.njk"  ignore missing %}
-    </div>
+  <body class="page">
+    <header class="page-header">
+      <h1>nicobruenjes.dev</h1>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+      <small>© 2021 Nico Brünjes – alle Texte unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></small>
+    </footer>
   </body>
 </html>

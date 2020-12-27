@@ -1,0 +1,33 @@
+@use 'sass:list';
+@use 'sass:math';
+
+$base-font-size: 16px;
+
+@function em($values, $context: $base-font-size) {
+  $list: ();
+  @each $value in $values {
+    $unit: math.unit($value);
+    @if ($unit=='em'or $unit=='') {
+      $list: list.append($list, $value);
+    } @else if ($unit==unit($context)) {
+      $list: list.append($list, $value / $context + 0em);
+    } @else if ($unit=='rem') {
+      $list: append($list, $value / 1rem + 0em);
+    }  @else {
+      $base: math.unit($context);
+      @warn "Incompatible units: '#{$unit}' and '#{$base}'";
+    }
+  }
+  @if length($list)==1 {
+     @return nth($list, 1);
+  }
+   @return $list;
+}
+
+@function rem($px) {
+  @return $px/16px * 1rem;
+}
+
+@function em_to_rem($em) {
+  @return $em/1em * 1rem
+}

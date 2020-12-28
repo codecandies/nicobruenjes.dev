@@ -4,7 +4,7 @@
  "delay": 100,
  "quiet": true,
  "watchexps": [
-    "src/css/**/*.scss # npm run css:dev # reloadcss",
+    "src/_assets/css/**/*.scss # npm run css:dev # reloadcss",
     "_site/**/*.html"
  ],
  "http2": false,

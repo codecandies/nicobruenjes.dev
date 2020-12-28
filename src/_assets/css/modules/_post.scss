@@ -6,10 +6,15 @@
     grid-column: 2;
   }
 
-  img {
+  figure {
     grid-column: 1 / 4;
     width: 100%;
     max-width: 100ch;
     justify-self: center;
+
+    img {
+      height: auto;
+      width: 100%
+    }
   }
 }

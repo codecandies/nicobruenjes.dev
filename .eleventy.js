@@ -5,7 +5,8 @@ const markdownItAttrs = require('markdown-it-attrs');
 
 module.exports = function( eleventyConfig ) {
 
-  eleventyConfig.addPassthroughCopy('src/css/fonts/')
+  eleventyConfig.addPassthroughCopy('src/css/fonts/');
+  eleventyConfig.addPassthroughCopy({'src/_assets/img/': 'img'});
   eleventyConfig.setDataDeepMerge(true);
 
   let markdownItOptions = {
@@ -26,15 +27,17 @@ module.exports = function( eleventyConfig ) {
   eleventyConfig.setLibrary('md', markdownLib);
 
   return {
+    templateFormats: ["html", "njk", "md"],
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk",
+    passthroughFileCopy: true,
     dir: {
       input: 'src',
       output: '_site',
       data: "_data",
       includes: '_includes',
       layouts: '_includes/layouts'
-    },
-    passthroughFileCopy: true,
-    templateFormats: ['njk', 'md', 'css', 'html', 'yml'],
-    htmlTemplateEngine: 'njk',
+    }
 	};
 }

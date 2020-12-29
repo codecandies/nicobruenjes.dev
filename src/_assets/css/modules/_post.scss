@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: minmax(1.2rem, 1fr) minmax(auto, 59ch) minmax(1.2rem, 1fr);
 
-  h1, h2, h3, h4, p {
+  & > * {
     grid-column: 2;
   }
 
@@ -36,4 +36,10 @@
     }
 
   }
+
+  pre[class*="language-"] {
+    border: 1px dotted var(--text-color);
+    margin-bottom: 1.5em;
+  }
+
 }

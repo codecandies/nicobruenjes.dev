@@ -1,12 +1,14 @@
+const implicitFigures = require('markdown-it-implicit-figures');
 const markdownIt = require( "markdown-it" );
 const markdownItAnchor = require( "markdown-it-anchor" );
 const markdownItContainer = require('markdown-it-container');
 const markdownItAttrs = require('markdown-it-attrs');
-const implicitFigures = require('markdown-it-implicit-figures');
+const prism = require('markdown-it-prism');
 
 module.exports = function( eleventyConfig ) {
 
   eleventyConfig.addPassthroughCopy('src/css/fonts/');
+  eleventyConfig.addPassthroughCopy('src/css/vendor/');
   eleventyConfig.addPassthroughCopy({'src/_assets/img/': 'img'});
   eleventyConfig.setDataDeepMerge(true);
 
@@ -26,6 +28,10 @@ module.exports = function( eleventyConfig ) {
     })
     .use(implicitFigures, {
       figcaption: true
+    })
+    .use(prism, {
+      defaultLanguageForUnknown: 'jinja2',
+      defaultLanguageForUnspecified: 'js'
     });
 
   eleventyConfig.setLibrary('md', markdownLib);

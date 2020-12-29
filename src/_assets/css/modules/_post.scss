@@ -1,3 +1,4 @@
+@use '../utils';
 .post {
   display: grid;
   grid-template-columns: minmax(1.2rem, 1fr) minmax(auto, 59ch) minmax(1.2rem, 1fr);
@@ -11,10 +12,28 @@
     width: 100%;
     max-width: 100ch;
     justify-self: center;
+    padding: utils.rem(40px) 0;
+
+    display: grid;
+    grid-template-columns: minmax(1.2rem, 1fr) minmax(auto, 59ch) minmax(1.2rem, 1fr);
 
     img {
+      grid-column: 2;
+      filter: var(--image-filter);
       height: auto;
-      width: 100%
+      width: 100%;
+
+      &.wide {
+        grid-column: 1 / 4;
+      }
+
     }
+
+    figcaption {
+      font-weight: 200;
+      grid-column: 2;
+      margin-top: utils.rem(10px);
+    }
+
   }
 }

@@ -9,8 +9,6 @@ Seht! Überall auf den Tannenspitzen, seh‘ ich Bigotterie und Wahnwitz sitzen.
 ## Ertränkt in Glühwein
 Ach, Weihnachten, das Fest der Liebe. Während es draußen schneit, kuschelt sich die versammelte Großfamilie warmen Kamin zusammen. Ein Weihnachtslied auf den Lippen, beschenkt man sich gegenseitig, mit liebevoll ausgesuchten Kleinigkeiten und… an dieser Stelle mag sich die geneigte Leser:in das Geräusch einer Kreissäge vorstellen, die versucht einen Betonblock zu zerteilen.  Und wie vorige Szene nach unten aus dem Bild fällt, dazu vielleicht noch das Klirren der teuren Chinavase, welche die verfluchten antiautoritär erzogenen Kinder von Tante Margot gerade umgeworfen haben.
 
-<figure><img src="/img/kitchen.jpg"></figure>
-
 Denn das Gegenteil ist die Wahrheit. Geschenke kaufen in letzter Sekunde. Die schon erwähnten nervigen Kinder von Tante Margot. Überhaupt, das in jeder Hinsicht fürchterliche Treffen mit der lästigen Verwandtschaft. Das stundenlange im Stau stehen auf dem Weg hinaus in die Einöde der Geburtsdörfer. Der retraumatisierende Besuch im  Elternhaus, aus dem nach jahrelanger Qual endlich die Flucht in die Großstadt gelang. Unsere Generation hat längst Schluß gemacht, mit dieser Hollywoodkulisse zwischen den Jahren. Die Kindheitserinnerungen, die durch den Geruch von Zimtsternen und Gewürznelken getriggert werden, haben wir schon vor Jahren in literweise Glühwein ertränkt.
 
 ## Verwandtschaft, Politik, Querdenker

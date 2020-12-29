@@ -2,6 +2,7 @@ const markdownIt = require( "markdown-it" );
 const markdownItAnchor = require( "markdown-it-anchor" );
 const markdownItContainer = require('markdown-it-container');
 const markdownItAttrs = require('markdown-it-attrs');
+const implicitFigures = require('markdown-it-implicit-figures');
 
 module.exports = function( eleventyConfig ) {
 
@@ -21,7 +22,10 @@ module.exports = function( eleventyConfig ) {
     .use(markdownItAttrs, {
       leftDelimiter: '{:',
       rightDelimiter: '}',
-      allowedAttributes: ['id', 'class', /^data\-.*$/],
+      allowedAttributes: ['id', 'class', /^data\-.*$/, 'loading'],
+    })
+    .use(implicitFigures, {
+      figcaption: true
     });
 
   eleventyConfig.setLibrary('md', markdownLib);

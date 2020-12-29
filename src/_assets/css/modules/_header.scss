@@ -20,9 +20,17 @@
       @extend .visually-hidden;
     }
 
-    &::after {
-      display: inline;
-      content: '|dev';
+    a {
+      color: var(--header-text-color);
+      text-decoration: none;
+      &:link, &:visited {
+        color: inherit;
+      }
+      &::after {
+        display: inline;
+        content: '|dev';
+      }
     }
+
   }
 }

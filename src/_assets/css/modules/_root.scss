@@ -1,10 +1,12 @@
 :root {
   --system-font: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-  --background-color: hsl(0, 0, 91.4%);
-  --text-color: hsla(0, 0, 9.4%, 0.785);
+  --background-color: hsl(47, 100%, 98%);
+  --text-color: hsla(0, 0%, 9.4%, 0.785);
+  --text-accent-color: hsl(36, 100%, 50%);
   --header-background-color: hsl(36, 100%, 50%);
   --header-text-color: var(--text-color);
   --webkit-font-smoothing: auto;
   --moz-font-smoothing: auto;
   --image-filter: none;
+  --blockquote-text-color: hsla(0, 0%, 9.4%, 0.5);
 }

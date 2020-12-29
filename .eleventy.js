@@ -4,11 +4,11 @@ const markdownItAnchor = require( "markdown-it-anchor" );
 const markdownItContainer = require('markdown-it-container');
 const markdownItAttrs = require('markdown-it-attrs');
 const prism = require('markdown-it-prism');
+const markDownItAttribution = require('markdown-it-attribution');
 
 module.exports = function( eleventyConfig ) {
 
-  eleventyConfig.addPassthroughCopy('src/css/fonts/');
-  eleventyConfig.addPassthroughCopy('src/css/vendor/');
+  eleventyConfig.addPassthroughCopy({'src/_assets/css/fonts/': 'css/fonts'});
   eleventyConfig.addPassthroughCopy({'src/_assets/img/': 'img'});
   eleventyConfig.setDataDeepMerge(true);
 
@@ -32,7 +32,8 @@ module.exports = function( eleventyConfig ) {
     .use(prism, {
       defaultLanguageForUnknown: 'jinja2',
       defaultLanguageForUnspecified: 'js'
-    });
+    })
+    .use(markDownItAttribution);
 
   eleventyConfig.setLibrary('md', markdownLib);
 

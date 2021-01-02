@@ -25,6 +25,8 @@
   "license": "MIT",
   "devDependencies": {
     "css-loader": "^5.0.1",
+    "eslint": "^7.16.0",
+    "eslint-plugin-compat": "^3.9.0",
     "light-server": "^2.9.1",
     "postcss-loader": "^4.1.0",
     "sass": "^1.29.0",

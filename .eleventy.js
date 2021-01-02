@@ -10,6 +10,7 @@ module.exports = function( eleventyConfig ) {
 
   eleventyConfig.addPassthroughCopy({'src/_assets/css/fonts/': 'css/fonts'});
   eleventyConfig.addPassthroughCopy({'src/_assets/img/': 'img'});
+  eleventyConfig.addPassthroughCopy({'src/_assets/js/': 'js'});
   eleventyConfig.setDataDeepMerge(true);
 
   let markdownItOptions = {

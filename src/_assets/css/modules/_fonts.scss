@@ -1,7 +1,55 @@
 @font-face {
   font-family: "Alice";
   src: url('/css/fonts/alice-regular.woff2') format('woff2'),
-  url('/css/fonts/alice-regular.woff') format('woff');
+    url('/css/fonts/alice-regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/css/fonts/lato-regular.woff2') format('woff2'),
+    url('/css/fonts/lato-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/css/fonts/lato-italic.woff2') format('woff2'),
+    url('/css/fonts/lato-italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/css/fonts/lato-light.woff2') format('woff2'),
+    url('/css/fonts/lato-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/css/fonts/lato-lightitalic.woff2') format('woff2'),
+    url('/css/fonts/lato-lightitalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/css/fonts/lato-bold.woff2') format('woff2'),
+    url('/css/fonts/lato-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/css/fonts/lato-bolditalic.woff2') format('woff2'),
+    url('/css/fonts/lato-bolditalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
 }

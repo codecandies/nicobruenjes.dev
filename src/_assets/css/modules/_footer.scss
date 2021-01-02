@@ -1,7 +1,7 @@
 @use '../utils';
 .page-footer {
-  background: var(--header-background-color);
-  box-shadow: inset 0px 3px 6px -3px rgba(0, 0, 0, 0.5);
+  //background: var(--header-background-color);
+  //box-shadow: inset 0px 3px 6px -3px rgba(0, 0, 0, 0.5);
   color: var(--header-text-color);
   grid-area: footer;
   padding: utils.em(4px) 0 utils.em(6px);

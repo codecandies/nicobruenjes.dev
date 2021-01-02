@@ -1,13 +1,16 @@
 @use '../utils';
 
 .page-header {
-  background: var(--header-background-color);
-  box-shadow: inset 0px -3px 6px -3px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  background-color: var(--header-background-color);
   color: var(--header-text-color);
+  display: flex;
+  font-family: var(--system-font);
   grid-area: header;
+  justify-content: space-between;
 
   h1 {
-    font-weight: 200;
+    font-weight: 400;
     font-size: 1rem;
     letter-spacing: 0.05em;
     margin: 0;
@@ -20,17 +23,113 @@
       @extend .visually-hidden;
     }
 
-    a {
-      color: var(--header-text-color);
-      text-decoration: none;
-      &:link, &:visited {
-        color: inherit;
-      }
-      &::after {
-        display: inline;
-        content: '|dev';
-      }
+    a::after {
+      display: inline;
+      content: '|dev';
+    }
+  }
+
+  a {
+    color: var(--header-text-color);
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+      color: inherit;
     }
 
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+    }
+
+  }
+}
+
+.page-navigation {
+  font-weight: 200;
+  margin: 0;
+  padding: .8rem;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-left: utils.rem(14px);
+      text-transform: lowercase;
+    }
+  }
+}
+
+@include utils.respond-max(utils.rem(500px)) {
+  .page-header {
+    .toggle {
+      box-sizing: border-box;
+      display: block;
+      padding: 0.8rem;
+
+      svg {
+        display: block;
+        pointer-events: none;
+        stroke: currentcolor;
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+  .page-navigation {
+    background: var(--header-background-color);
+    box-sizing: border-box;
+    grid-area: nav;
+    position: fixed;
+    right: -120vw;
+    transition: transform .3s ease-in-out;
+    top: 0;
+    width: 100vw;
+
+    &--targeted,
+    &:target {
+      transform: translateX(-120vw);
+    }
+
+    ul li:first-child {
+      font-weight: 400;
+    }
+
+    .toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+@include utils.respond-max(utils.rem(321px)) {
+  .page-navigation ul li {
+    border-right: 1px solid var(--header-text-color);
+    margin: 0;
+    padding: 0 utils.rem(3px);
+  }
+  .page-navigation ul li:last-child {
+    border: none;
+  }
+}
+
+@include utils.respond-max(utils.rem(390px)) {
+  .page-navigation ul li:first-child {
+    display: none;
+  }
+}
+
+@include utils.respond-min(utils.rem(500px)) {
+  .page-header .toggle {
+      display: none;
+  }
+  .page-navigation ul li:first-child {
+    display: none;
   }
 }

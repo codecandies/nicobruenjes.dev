@@ -1,12 +1,2 @@
 {% extends 'layouts/default.njk' %}
 
-{%- block content %}
-  <div class="site-title">
-    {{ super() }}
-    <ul>
-      {%- for post in collections.post-%}
-      <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
-      {%- endfor -%}
-    </ul>
-  </div>
-{%- endblock -%}

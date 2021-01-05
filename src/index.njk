@@ -1,0 +1,13 @@
+---
+title: nico|dev
+layout: home.njk
+tags: ["general"]
+---
+
+<div class="site-title">
+    <ul>
+      {%- for post in collections.post-%}
+      <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+      {%- endfor -%}
+    </ul>
+  </div>

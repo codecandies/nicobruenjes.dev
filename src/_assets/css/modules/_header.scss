@@ -5,16 +5,21 @@
   background-color: var(--header-background-color);
   color: var(--header-text-color);
   display: flex;
+  height: utils.em(46px);
   font-family: var(--system-font);
   grid-area: header;
   justify-content: space-between;
+  @include utils.font-size-factor(1rem);
+  @include utils.respond-min(utils.em(1441px)) {
+    justify-content: center;
+  }
 
   h1 {
     font-weight: 400;
-    font-size: 1rem;
+    font-size: inherit;
     letter-spacing: 0.05em;
     margin: 0;
-    padding: .8rem;
+    padding: .8em;
     text-align: center;
     text-transform: lowercase;
     @include utils.font-smoothing();
@@ -50,7 +55,7 @@
 .page-navigation {
   font-weight: 200;
   margin: 0;
-  padding: .8rem;
+  padding: .8em;
 
   ul {
     list-style: none;
@@ -59,18 +64,18 @@
 
     li {
       display: inline-block;
-      margin-left: utils.rem(14px);
+      margin-left: utils.em(14px);
       text-transform: lowercase;
     }
   }
 }
 
-@include utils.respond-max(utils.rem(500px)) {
+@include utils.respond-max(utils.em(500px)) {
   .page-header {
     .toggle {
       box-sizing: border-box;
       display: block;
-      padding: 0.8rem;
+      padding: .8em;
 
       svg {
         display: block;
@@ -108,24 +113,24 @@
   }
 }
 
-@include utils.respond-max(utils.rem(321px)) {
+@include utils.respond-max(utils.em(321px)) {
   .page-navigation ul li {
     border-right: 1px solid var(--header-text-color);
     margin: 0;
-    padding: 0 utils.rem(3px);
+    padding: utils.em(0 3px);
   }
   .page-navigation ul li:last-child {
     border: none;
   }
 }
 
-@include utils.respond-max(utils.rem(390px)) {
+@include utils.respond-max(utils.em(390px)) {
   .page-navigation ul li:first-child {
     display: none;
   }
 }
 
-@include utils.respond-min(utils.rem(500px)) {
+@include utils.respond-min(utils.em(500px)) {
   .page-header .toggle {
       display: none;
   }

@@ -53,3 +53,11 @@
   font-weight: 700;
   font-style: italic;
 }
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/css/fonts/lato-black.woff2') format('woff2'),
+    url('/css/fonts/lato-black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}

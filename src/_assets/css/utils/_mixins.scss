@@ -1,3 +1,6 @@
+@use 'functions';
+@use 'vars';
+
 $fix-mqs: false !default;
 $fix-mqs-h: false !default;
 
@@ -107,4 +110,11 @@ $fix-mqs-h: false !default;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: var(--moz-font-smoothing, auto);
   -webkit-font-smoothing: var(--webkit-font-smoothing, auto);
+}
+
+@mixin font-size-factor($size, $factor: vars.$font-scale-factor, $breakpoint: functions.em(750px)) {
+  font-size: functions.rem($size);
+  @include respond-min($breakpoint) {
+    font-size: functions.rem($size*$factor);
+  }
 }

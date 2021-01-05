@@ -1,6 +1,10 @@
 ---
 tags: post
-title: Testartikel
+title: "Ein Himmelreich für ein Loft"
+subtitle: "Günstiger Wohnraum ist in New York Mangelware. Luxusdomizile allerdings noch mehr."
+image: loft.jpg
+heroImage: loft.jpg
+eleventyExcludeFromCollections: true
 ---
 
 # Testartikel H1

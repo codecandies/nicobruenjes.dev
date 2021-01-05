@@ -1,10 +1,4 @@
 @use '../utils';
-html {
-  font-size: utils.rem(16px);
-  @include utils.respond-min(utils.em(750px)) {
-    font-size: utils.rem(20px);
-  }
-}
 
 body {
   background-color: var(--background-color);
@@ -27,7 +21,6 @@ body {
 
 main {
   grid-area: main;
-  padding: utils.rem(40px) 0;
 
   h1,
   h2,
@@ -45,22 +38,23 @@ main {
   }
 
   h1 {
-    font-size: utils.rem(48px);
+    //font-size: utils.rem(48px);
+    @include utils.font-size-factor(48px);
   }
 
   h2 {
-    font-size: utils.rem(26px);
+    @include utils.font-size-factor(26px);
   }
 
   h3 {
-    font-size: utils.rem(24px);
+    @include utils.font-size-factor(24px);
   }
 
   h3,
   h4,
   h5,
   h6 {
-    font-size: utils.rem(22px);
+    @include utils.font-size-factor(22px);
   }
 
   p {
@@ -73,7 +67,7 @@ main {
   td,
   th,
   small {
-    font-size: 1.2rem;
+    @include utils.font-size-factor(1.2rem);
     font-weight: 300;
     hyphens: auto;
     line-height: 1.4;

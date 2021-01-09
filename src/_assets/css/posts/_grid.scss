@@ -1,0 +1,25 @@
+.post {
+  display: grid;
+  grid-template-columns: minmax(1.5rem, 1fr) minmax(auto, 60ch) minmax(1.5rem, 1fr);
+
+  & > * {
+    grid-column: 2;
+  }
+
+  & > .wide {
+    grid-column: 1 / 4;
+  }
+
+  & > figure {
+    grid-column: 1 / 4;
+    display: contents;
+
+    & > * {
+      grid-column: 2;
+    }
+
+    & > .wide {
+      grid-column: 1 / 4;
+    }
+  }
+}

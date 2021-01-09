@@ -1,8 +1,8 @@
-const toggles = document.querySelectorAll('.page-header .toggle');
-const nav = document.querySelector('.page-navigation');
+const toggles = document.querySelectorAll('body > header .toggle');
+const nav = document.querySelector('body > header > nav');
 toggles.forEach( toggle => {
   toggle.addEventListener('click', event => {
     event.preventDefault();
-    nav.classList.toggle('page-navigation--targeted');
+    nav.classList.toggle('is-targeted');
   });
 });

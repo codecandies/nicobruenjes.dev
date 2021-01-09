@@ -1,0 +1,106 @@
+@use '../utils' as u;
+
+html {
+  height: -webkit-fill-available;
+  // Prevent adjustments of font size after orientation changes in iOS
+   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Lato', sans-serif;
+  // fallback value
+  min-height: 100vh;
+  // mobile viewport bug fix
+  min-height: -webkit-fill-available;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+
+  @include u.fluid-font(2.5vw, 20px, 24px, 20px);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--serif-font);
+  margin: u.$baseline*2 0 u.$baseline/2;
+
+  & + p,
+  & + ul,
+  & + ol,
+  & + figure
+  & + table {
+    margin-top: 0;
+  }
+
+  .header-anchor {
+    display: none;
+  }
+  &:hover > .header-anchor {
+    border: none;
+    display: inline;
+  }
+}
+
+h1 {
+  font-size: u.$h1;
+  line-height: u.$h1;
+}
+
+h2 {
+  font-size: u.$h2;
+  line-height: u.$h2;
+}
+
+h3 {
+  font-size: u.$h3;
+  line-height: u.$h3;
+}
+
+h4 {
+  font-size: u.$h4;
+  line-height: u.$h4;
+}
+
+h5 {
+  font-size: u.$h5;
+  line-height: u.$h5;
+}
+
+p, li {
+  line-height: u.$baseline;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+p, ul, ol, table, figure {
+  margin: u.$baseline 0 0;
+}
+
+@supports(hyphens: auto) {
+  html[lang^="de"] p,
+  html[lang^="en"] p html[lang^="fr"] p,
+  p[lang^="de"],
+  p[lang^="en"],
+  p[lang^="fr"] {
+    hyphens: auto;
+    text-align: justify;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:any-link {
+  border-bottom: 1px solid var(--text-color);
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+a:hover,
+a:active {
+  border-bottom: 1px solid var(--text-accent-color);
+  font-weight: 400;
+  color: var(--text-accent-color);
+}

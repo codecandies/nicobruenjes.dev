@@ -1,5 +1,5 @@
-@use 'functions';
-@use 'vars';
+@use 'functions' as f;
+@use 'vars' as v;
 
 $fix-mqs: false !default;
 $fix-mqs-h: false !default;
@@ -112,9 +112,40 @@ $fix-mqs-h: false !default;
   -webkit-font-smoothing: var(--webkit-font-smoothing, auto);
 }
 
-@mixin font-size-factor($size, $factor: vars.$font-scale-factor, $breakpoint: functions.em(750px)) {
-  font-size: functions.rem($size);
+@mixin font-size-factor($size, $factor: v.$font-scale-factor, $breakpoint: f.em(750px)) {
+  font-size: f.rem($size);
   @include respond-min($breakpoint) {
-    font-size: functions.rem($size*$factor);
+    font-size: f.rem($size*$factor);
   }
+}
+
+
+/// @param {Number}   $responsive  - Viewport-based size
+/// @param {Number}   $min         - Minimum font size (px)
+/// @param {Number}   $max         - Maximum font size (px)
+///                                  (optional)
+/// @param {Number}   $fallback    - Fallback for viewport-
+///                                  based units (optional)
+@mixin fluid-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive)=='vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+
+  @if $fallback {
+    font-size: $fallback;
+  }
+
+  font-size: $responsive;
 }

@@ -2,6 +2,7 @@ const implicitFigures = require('markdown-it-implicit-figures');
 const markdownIt = require( "markdown-it" );
 const markdownItAnchor = require( "markdown-it-anchor" );
 const markdownItContainer = require('markdown-it-container');
+const markdownItTocDoneRight = require( "markdown-it-toc-done-right" );
 const markdownItAttrs = require('markdown-it-attrs');
 const prism = require('markdown-it-prism');
 const markDownItAttribution = require('markdown-it-attribution');
@@ -22,6 +23,7 @@ module.exports = function( eleventyConfig ) {
   let markdownLib = markdownIt(markdownItOptions)
     .use(markdownItContainer, 'warning' )
     .use(markdownItContainer, 'tip' )
+    .use(markdownItContainer, 'copyright' )
     .use(markdownItAttrs, {
       leftDelimiter: '{:',
       rightDelimiter: '}',
@@ -34,7 +36,13 @@ module.exports = function( eleventyConfig ) {
       defaultLanguageForUnknown: 'jinja2',
       defaultLanguageForUnspecified: 'js'
     })
-    .use(markDownItAttribution);
+    .use( markdownItAnchor, {
+      permalink: true, // add anchors to headings
+      permalinkBefore: false, // after the heading
+      permalinkSymbol: "#"
+    })
+    .use( markDownItAttribution )
+    .use( markdownItTocDoneRight, {level: 2} );
 
   eleventyConfig.setLibrary('md', markdownLib);
 

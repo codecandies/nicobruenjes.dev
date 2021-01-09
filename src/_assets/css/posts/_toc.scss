@@ -1,0 +1,19 @@
+@use '../utils'as u;
+
+.post > .table-of-contents {
+  border-bottom: 1px solid var(--text-accent-color);
+  border-top: 1px solid var(--text-accent-color);
+  margin-top: u.$baseline;
+  padding: .5em 0;
+
+  ol {
+    list-style-type: decimal-leading-zero;
+    margin: 0;
+    padding-left: 2em;
+  }
+
+  li ol {
+    list-style: none;
+    padding: 0;
+  }
+}

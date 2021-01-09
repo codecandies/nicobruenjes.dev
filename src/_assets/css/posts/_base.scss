@@ -1,0 +1,60 @@
+@use '../utils' as u;
+
+.post > figure {
+  justify-self: center;
+  max-width: 100ch;
+  width: 100%;
+
+  figcaption {
+    margin-top: u.$baseline/2;
+    font-size: 0.825em;
+    font-weight: 300;
+  }
+
+  // using figure for image display
+  img {
+    filter: var(--image-filter);
+    height: auto;
+    margin-top: u.$baseline;
+    width: 100%;
+  }
+
+  // using figure for pull quotes
+  blockquote {
+    color: var(--blockquote-text-color);
+    font-family: Alice, serif;
+    font-style: italic;
+    grid-column: 2;
+    margin: 0;
+    padding-left: .4em;
+
+    p {
+      font-weight: 400;
+    }
+
+    p:first-child {
+      text-indent: -0.4em;
+    }
+
+    p:first-child::before {
+      content: "„"
+    }
+
+    p:last-child::after {
+      content: "“";
+    }
+
+    &+figcaption {
+      padding-left: .4em;
+    }
+  }
+}
+
+.post pre[class*="language-"] {
+  border: 1px dotted var(--text-color);
+  margin: u.$baseline 0 0; // overwrites pism.css
+
+  code {
+    font-size: 70%;
+  }
+}

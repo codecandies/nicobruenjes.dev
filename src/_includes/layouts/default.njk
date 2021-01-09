@@ -11,10 +11,10 @@
     <meta name="description" content="{{ description or metadata.description }}">
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="{{ '/css/dark.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/vendor/prism.css' | url }}">
+    {% block additional_styles %}{% endblock %}
   </head>
   <body>
-    <div class="page">
+    <!--div class="page"-->
       {% include "../_partials/header.njk"  ignore missing -%}
       <main class="page-main">
         {%- block content %}
@@ -22,7 +22,7 @@
         {%- endblock -%}
       </main>
       {%- include "../_partials/footer.njk"  ignore missing %}
-    </div>
+    <!--/div -->
     <script type="module" src="/js/index.js"></script>
   </body>
 </html>

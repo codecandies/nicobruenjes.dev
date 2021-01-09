@@ -1,0 +1,12 @@
+@use '../utils' as u;
+
+body > footer {
+  color: var(--header-text-color);
+  padding: u.em(4px 0 6px);
+  text-align: center;
+
+  small {
+    font-size: .675em;
+    font-weight: 300;
+  }
+}

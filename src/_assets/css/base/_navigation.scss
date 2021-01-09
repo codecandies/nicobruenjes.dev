@@ -1,0 +1,71 @@
+@use '../utils' as u;
+
+body > header > nav {
+  font-weight: 200;
+  margin: 0;
+  padding: .8em;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-left: u.em(14px);
+      text-transform: lowercase;
+    }
+  }
+}
+
+@include u.respond-max(u.em(500px)) {
+   body > header > nav {
+     background: var(--header-background-color);
+     box-sizing: border-box;
+     grid-area: nav;
+     position: fixed;
+     right: -120vw;
+     transition: transform .3s ease-in-out;
+     top: 0;
+     width: 100vw;
+
+     &.is-targeted,
+     &:target {
+       transform: translateX(-120vw);
+     }
+
+     ul li:first-child {
+       font-weight: 400;
+     }
+
+     .toggle {
+       position: absolute;
+       right: 0;
+       top: 0;
+     }
+   }
+}
+
+@include u.respond-max(u.em(321px)) {
+  body > header > nav ul li {
+    border-right: 1px solid var(--header-text-color);
+    margin: 0;
+    padding: u.em(0 3px);
+  }
+
+  body > header > nav ul li:last-child {
+    border: none;
+  }
+}
+
+@include u.respond-max(u.em(390px)) {
+  body > header > nav ul li:first-child {
+    display: none;
+  }
+}
+
+@include u.respond-min(u.em(500px)) {
+  body > header > nav ul li:first-child {
+    display: none;
+  }
+}

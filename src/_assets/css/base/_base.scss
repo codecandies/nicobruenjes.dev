@@ -9,7 +9,7 @@ html {
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: 'Lato', sans-serif;
+  font-family: var(--standard-font);
   // fallback value
   min-height: 100vh;
   // mobile viewport bug fix
@@ -22,7 +22,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: var(--serif-font);
+  font-family: var(--heading-font);
   margin: u.$baseline*2 0 u.$baseline/2;
 
   & + p,

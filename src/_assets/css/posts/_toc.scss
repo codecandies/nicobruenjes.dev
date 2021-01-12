@@ -5,8 +5,11 @@
   background-image: linear-gradient(rgba(255, 255, 255, .25) 1px, transparent 1px);
   background-size: 1px calc(2rem + 1px);
   border-radius: u.rem(5px);
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.5);
+  font-family: var(--heading-font);
+  font-weight: 400;
   margin-top: u.$baseline;
-  padding: .75rem 1rem 1rem;
+  padding: 2rem 1rem;
 
   ol {
     list-style-type: decimal-leading-zero;
@@ -27,5 +30,8 @@
   a:any-link {
     border: none;
     text-decoration: none;
+  }
+  a:hover {
+    color: var(--background-color);
   }
 }

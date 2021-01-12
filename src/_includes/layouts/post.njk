@@ -7,9 +7,13 @@
 
 {%- block content %}
   {% set imageblock -%}
-  {%- if heroImage -%}
+  {%- if heroImage or heroTemplate -%}
   <header class="post-image wide">
+    {% if heroTemplate %}
+    {% include '_partials/' + heroTemplate  + '/image.njk'   ignore missing %}
+    {% else %}
     <img src="/img/{{ image }}" alt="">
+    {% endif %}
     <div class="post-title">
       <h1>{{ title }}</h1>
       {% if subtitle -%}

@@ -2,7 +2,7 @@
 tags: post
 title: "Mit eleventy durchstarten"
 subtitle: "Das eleventy Tutorial – Teil 1"
-heroImage: opossumhero.jpg
+heroTemplate: opossum
 image: opossumhero.jpg
 ---
 

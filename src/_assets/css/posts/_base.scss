@@ -22,14 +22,16 @@
   // using figure for pull quotes
   blockquote {
     color: var(--blockquote-text-color);
-    font-family: Alice, serif;
+    font-weight: 700;
     font-style: italic;
     grid-column: 2;
     margin: 0;
-    padding-left: .4em;
+    padding: 0 0 0 2em;
 
     p {
-      font-weight: 400;
+      font-weight: inherit;
+      hyphens: none;
+      text-align: left;
     }
 
     p:first-child {
@@ -45,7 +47,7 @@
     }
 
     &+figcaption {
-      padding-left: .4em;
+      padding-left: 2.4em;
     }
   }
 }

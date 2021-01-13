@@ -106,20 +106,6 @@ $fix-mqs-h: false !default;
   }
 }
 
-@mixin font-smoothing() {
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: var(--moz-font-smoothing, auto);
-  -webkit-font-smoothing: var(--webkit-font-smoothing, auto);
-}
-
-@mixin font-size-factor($size, $factor: v.$font-scale-factor, $breakpoint: f.em(750px)) {
-  font-size: f.rem($size);
-  @include respond-min($breakpoint) {
-    font-size: f.rem($size*$factor);
-  }
-}
-
-
 /// @param {Number}   $responsive  - Viewport-based size
 /// @param {Number}   $min         - Minimum font size (px)
 /// @param {Number}   $max         - Maximum font size (px)

@@ -7,7 +7,7 @@
   border-radius: u.rem(5px);
   box-shadow: 0px 0 10px rgba(0, 0, 0, 0.5);
   font-family: var(--heading-font);
-  font-weight: 400;
+  font-weight: 300;
   margin-top: u.$baseline;
   padding: 2rem 1rem;
 
@@ -29,6 +29,7 @@
 
   a:any-link {
     border: none;
+    font-weight: inherit;
     text-decoration: none;
   }
   a:hover {

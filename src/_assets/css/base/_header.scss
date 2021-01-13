@@ -5,10 +5,11 @@ body > header {
   background-color: var(--header-background-color);
   color: var(--header-text-color);
   display: flex;
-  height: 46px;
   font-family: var(--system-font);
-  justify-content: space-between;
   font-size: 1rem;
+  font-weight: 300;
+  height: 46px;
+  justify-content: space-between;
   @include u.respond-min(u.em(750px)) {
     height: 60px;
     font-size: 1.25rem;
@@ -20,13 +21,11 @@ body > header {
   h1 {
     font-family: inherit;
     font-size: inherit;
-    font-weight: 400;
     letter-spacing: 0.05em;
     margin: 0;
     padding: .8em;
     text-align: center;
     text-transform: lowercase;
-    @include u.font-smoothing();
 
     span {
       @extend .visually-hidden;
@@ -45,6 +44,7 @@ body > header {
     &:any-link {
       border: none;
       color: inherit;
+      font-weight: inherit;
     }
 
     &:hover,

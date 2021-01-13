@@ -10,20 +10,20 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--standard-font);
+  font-weight: 300;
   // fallback value
   min-height: 100vh;
   // mobile viewport bug fix
   min-height: -webkit-fill-available;
   margin: 0;
   padding: 0;
-  text-rendering: optimizeLegibility;
 
   @include u.fluid-font(2.5vw, 20px, 24px, 20px);
 }
 
 h1, h2, h3, h4, h5 {
   font-family: var(--heading-font);
-  margin: u.$baseline*2 0 u.$baseline/2;
+  margin: u.$baseline*2 0 u.$baseline/3;
 
   & + p,
   & + ul,
@@ -69,8 +69,6 @@ h5 {
 
 p, li {
   line-height: u.$baseline;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 }
 
 p, ul, ol, table, figure {

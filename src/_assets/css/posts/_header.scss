@@ -43,7 +43,7 @@
     z-index: 1;
 
      @include u.respond-min(u.em(750px)) {
-       padding: 3.2em 1.6em;
+       padding: 2em 1.6em;
      }
 
     @include u.respond-min(u.em(1100px)) {
@@ -53,18 +53,19 @@
 
   h1, p {
     color: #fff;
-    @include u.font-smoothing;
   }
 
   h1 {
     font-family: var(--sans-serif-font);
-    font-weight: 900;
+    font-weight: 800;
     hyphens: none;
     line-height: 1.25;
-    margin: 0 0 .25em;
+    margin: 0 0 .05em;
+    @include u.fluid-font(6vw, 48px, 84px, 32px);
   }
 
   p {
+    font-size: 32px;
     font-weight: 300;
     margin: 0;
   }

@@ -30,7 +30,7 @@
     "sass": "^1.29.0"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^0.12.1",
     "autoprefixer": "^10.0.2",
     "markdown-it": "^12.0.2",
     "markdown-it-anchor": "^6.0.1",
